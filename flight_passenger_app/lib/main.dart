@@ -29,15 +29,12 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate, // built-in: for basic text of Cupertino widgets
         GlobalWidgetsLocalizations.delegate, // built-in: for text direction LTR/RTL
       ],
-      home: MyHomePage(title: AppLocalizations.of(context).translate('app_title_passenger')),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -50,13 +47,14 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(title),
+        title: Text(AppLocalizations.of(context).translate('app_title_passenger')),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('${AppLocalizations.of(context).translate('msg_welcome')}'),
+            SizedBox(height: 20.0),
             FlightDisplay(
               flightDetails: FlightDetails(
                 airline: "JAL",
