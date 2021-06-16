@@ -2,7 +2,7 @@
 
 This is a simple framework to demonstrate a problem that I am having with accessing assets from other packages.
 
-The project uses the 'melos' package (which can be installed from pub.dev using `dart pub global activate melos') to manage a monorepo which contains
+The project uses the 'melos' package (which can be installed from pub.dev using `dart pub global activate melos`) to manage a monorepo which contains
 - 2 apps
 - 3 libraries/packages that are common to the 2 apps.
 
