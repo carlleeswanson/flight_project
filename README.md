@@ -14,5 +14,3 @@ When either of the apps are launched, they cause an exception in flutter service
 `E/flutter (25659): [ERROR:flutter/lib/ui/ui_dart_state.cc(177)] Unhandled Exception: Unable to load asset: lang/en.json`
 
 It appears that the assets are not being built into the rootBundle (it's empty).
-
-Or perhaps there is something erroneous with how the LocalizationsDelegate is set up.
