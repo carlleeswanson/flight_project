@@ -16,8 +16,7 @@ When either of the apps are launched, they cause an exception in `flutter/servic
 It appears that the assets are not being built into the rootBundle (if you set a breakpoint on line #24 in app_localizations.dart, rootBundle shows as empty).
 
 
-
-Note that the current/latest version of flight_translations_library/pubspec.yaml does not explicitly specify the assets that are included in the package.
+Note that the current/latest version of `flight_translations_library/pubspec.yaml` does not explicitly specify the assets that are included in the package.
 According to the documentation, since the assets are within the `/lib` directory, they should _automatically_ be included in the package.
 
 However, I have also tried explicitly identifying them with
