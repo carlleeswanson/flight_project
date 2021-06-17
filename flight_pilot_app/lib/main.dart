@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flight_translations_library/flight_translations_library.dart';
-import 'package:flight_common_widgets_library/flight_common_widgets_library.dart';
-import 'package:flight_core_models_library/flight_core_models_library.dart';
 
 void main() {
   runApp(MyApp());
@@ -54,14 +52,6 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('${AppLocalizations.of(context).translate('msg_welcome')}'),
-            SizedBox(height: 20.0),
-            FlightDisplay(
-              flightDetails: FlightDetails(
-                airline: "BA",
-                flightNumber: "17",
-                departureDate: "2021-06-15",
-              ),
-            ),
           ],
         ),
       ),

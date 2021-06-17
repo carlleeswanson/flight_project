@@ -50,20 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
-  flight_common_widgets_library:
-    dependency: "direct main"
-    description:
-      path: "../flight_common_widgets_library"
-      relative: true
-    source: path
-    version: "0.0.1"
-  flight_core_models_library:
-    dependency: "direct main"
-    description:
-      path: "../flight_core_models_library"
-      relative: true
-    source: path
-    version: "0.0.1"
   flight_translations_library:
     dependency: "direct main"
     description:

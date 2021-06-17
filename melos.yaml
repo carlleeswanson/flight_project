@@ -3,6 +3,4 @@ name: flight_project
 packages:
   - flight_pilot_app
   - flight_passenger_app
-  - flight_core_models_library
-  - flight_common_widgets_library
   - flight_translations_library
