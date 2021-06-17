@@ -21,7 +21,8 @@ class AppLocalizations {
   // Load the localizations
   Future<void> load() async {
     // Load the language JSON file from the 'lang' folder
-    String jsonString = await rootBundle.loadString('lang/${locale.languageCode}.json');
+    String jsonString =
+        await rootBundle.loadString('packages/flight_translations_library/lang/${locale.languageCode}.json');
     // jsonMap (i.e. result of decode) has to be to dynamic map (even though are actually all strings)
     Map<String, dynamic> jsonMap = json.decode(jsonString);
     // re-map to create the strings we will use

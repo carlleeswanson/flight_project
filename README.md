@@ -16,16 +16,15 @@ When either of the apps are launched, they cause an exception in `flutter/servic
 It appears that the assets are not being built into the rootBundle (if you set a breakpoint on line #24 in app_localizations.dart, rootBundle shows as empty).
 
 
-### Note regarding package variations
-The current/latest version of `flight_translations_library/pubspec.yaml` does not explicitly specify the assets that are included in the package.
-According to the documentation, since the assets are within the `/lib` directory, they should _automatically_ be included in the package.
+### Solution!
+After **much** experimentation and further searching, I located `https://github.com/flutter/flutter/issues/65921`. This flutter issue clarifies that the lookup string provided to rootBundle _**must**_ include the full package path to the assets. You cannot use the abbreviated form that is currently (as of 06/2021) indicated in the flutter documentation.
 
-However, I have also tried explicitly identifying the assets with
-```yaml
-flutter:
-  assets:
-    - lang/en.json
-    - lang/es.json
-    - lang/fr.json
-```
-This yielded the same error.
+So in `app_localizations.dart` changing from:
+
+`String jsonString = await rootBundle.loadString('lang/${locale.languageCode}.json');`
+
+to
+
+`String jsonString = await rootBundle.loadString('packages/flight_translations_library/lang/${locale.languageCode}.json');`
+
+solved the problem.
