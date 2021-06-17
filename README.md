@@ -9,8 +9,23 @@ The project uses the 'melos' package (which can be installed from pub.dev using 
 With this structure, the apps are able access the classes that are defined/exported by the shared library/package.
 
 Unfortunately, there is an issue with the shared **assets**, specifically the JSON files that contain the language translations.
-When either of the apps are launched, they cause an exception in flutter services/asset_bundle.dart
+When either of the apps are launched, they cause an exception in `flutter/services/asset_bundle.dart`
 
 `E/flutter (25659): [ERROR:flutter/lib/ui/ui_dart_state.cc(177)] Unhandled Exception: Unable to load asset: lang/en.json`
 
 It appears that the assets are not being built into the rootBundle (if you set a breakpoint on line #24 in app_localizations.dart, rootBundle shows as empty).
+
+
+
+Note that the current/latest version of flight_translations_library/pubspec.yaml does not explicitly specify the assets that are included in the package.
+According to the documentation, since the assets are within the `/lib` directory, they should _automatically_ be included in the package.
+
+However, I have also tried explicitly identifying them with
+```yaml
+flutter:
+  assets:
+    - lang/en.json
+    - lang/es.json
+    - lang/fr.json
+```
+This yielded the same error.
