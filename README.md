@@ -17,7 +17,7 @@ It appears that the assets are not being built into the rootBundle (if you set a
 
 
 ### Solution!
-After **much** experimentation and further searching, I located `https://github.com/flutter/flutter/issues/65921`. This flutter issue clarifies that the lookup string provided to rootBundle _**must**_ include the full package path to the assets. You cannot use the abbreviated form that is currently (as of 06/2021) indicated in the flutter documentation.
+After **much** experimentation and further searching, I located https://github.com/flutter/flutter/issues/65921. This flutter issue clarifies that the lookup string provided to rootBundle _**must**_ include the full package path to the assets. You cannot use the abbreviated form that is currently (as of 06/2021) indicated in the flutter documentation.
 
 So in `app_localizations.dart` changing from:
 
